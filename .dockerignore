@@ -1,0 +1,30 @@
+.appends/
+.git/
+.github/
+bin/run-in-docker.sh
+bin/run-tests-in-docker.sh
+bin/run-tests.sh
+tests/
+.dockerignore
+.gitattributes
+.gitignore
+CODE_OF_CONDUCT.md
+LICENSE
+README.md
+
+# The above lines define which files _not_ to copy into the Docker build context.
+# It is also possible to setup this file as an allow list, where by default everything 
+# is ignored and then exceptions are added for just those files that need to be copied
+# into the image.
+#
+# The benefits of this approach are:
+# - Reduces the size of the Docker build context
+# - No risk of accidentally embedding files into the image (e.g. secrets)
+# - Makes it explicit which files are actually used in the Docker image
+#
+# If you'd like to use this approach, removes the above lines and uncomment the below lines:
+# *
+# !bin/run.sh
+#
+# Of course, you'll also need to add exceptions for any other files that are
+# required by your Docker image.
